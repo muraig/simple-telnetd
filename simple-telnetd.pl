@@ -203,7 +203,7 @@ my $i = 0;
 # Массив для потомков
 my @child = ();
 
-if ( grep /-i/, @args ) {
+if ( grep { /-i/ }, @args ) {
 
   # Создаем интернет сокет на порту 23
   #
@@ -215,7 +215,7 @@ if ( grep /-i/, @args ) {
   ) or die "Couldn't be a tcp server on port $port: $@ ";
   $inet = 1;
 
-} elsif ( grep /-u/, @args ) {
+} elsif ( grep { /-u/ }, @args ) {
   # Создаем UNIX сокет по адресу
   # /tmp/myprog.PID_ПРОЦЕССА
 
